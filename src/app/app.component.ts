@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { AccountService } from './accounts.service';
-import { Account } from './models/Account'
+import { UsersService } from './users.service';
+import { Users } from './models/Users'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [AccountService]
+  providers: [UsersService]
 })
 export class AppComponent {
   title = 'pruebaSQL';
-  accountlist : Account[] = null;
+  userslist : Users[] = null;
 
-  constructor (account: AccountService) {
-    account.getAllAccounts().subscribe(
+  constructor (users: UsersService) {
+    users.getAllUsers().subscribe(
       (data: any ) => {
-        this.accountlist = data;
+        //this.userslist = data;
         console.log(data);
       },
       error => {
