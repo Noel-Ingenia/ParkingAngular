@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AccountService } from './accounts.service';
-import { Account } from './models/Account'
+import { Account } from './models/Account';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,12 @@ export class AppComponent {
   title = 'pruebaSQL';
   accountlist : Account[] = null;
 
-  constructor (account: AccountService) {
+  usuario = new Account(0, "Email", "Password");
+  account: AccountService;
+
+  constructor (account: AccountService ) {
+    this.account = account;
+
     account.getAllAccounts().subscribe(
       (data: any ) => {
         this.accountlist = data;
@@ -24,4 +29,14 @@ export class AppComponent {
     );
   }
 
+  public createUser() {
+    this.account.postUser(this.usuario).subscribe(
+      (data: any ) => {
+        console.log("SUCCESS : " + data);
+      },
+      error => {
+        console.log("ERROR : " + error);
+      }
+    );
+  }
 }
