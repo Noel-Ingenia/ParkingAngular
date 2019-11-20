@@ -15,7 +15,7 @@ export class AppComponent {
   constructor (users: UsersService) {
     users.getAllUsers().subscribe(
       (data: any ) => {
-        //this.userslist = data;
+        this.userslist = data;
         console.log(data);
       },
       error => {
