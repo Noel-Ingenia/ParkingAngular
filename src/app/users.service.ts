@@ -10,4 +10,8 @@ export class UsersService {
   public getAllUsers() {
     return this.http.get<any[]>('http://192.168.19.116:3000/users');
   }
+
+  public postUser(usuario : Users) {
+    return this.http.post('http://localhost:3000/users', usuario)
+  }
 }

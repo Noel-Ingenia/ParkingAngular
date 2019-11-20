@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'pruebaSQL';
   userslist : Users[] = null;
 
-  usuario = new Users(0, "Email", "Password");
+  usuario = new Users(0, "Email", "Password", "", "", "", "", false);
   users: UsersService;
 
   constructor (users: UsersService) {
