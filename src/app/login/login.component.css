@@ -1,0 +1,16 @@
+.card-login{
+  display: flex;
+  flex-direction: column;
+}
+
+.card-login > * {
+  width: 100%;
+
+}
+
+.login-main{
+  width: 100%;
+}
+
+
+
