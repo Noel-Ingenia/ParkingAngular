@@ -3,26 +3,26 @@
   <div>{{user.id}}{{user.pruebaCadena}}{{user.pruebaCadenaDos}}</div>
 </div> -->
 <div class="login-main">
-<br>
-<br>
 <mat-card class="card-login">
   <mat-card-header>
-    <mat-card-title style="margin-bottom:20%">Iniciar sesión</mat-card-title>
+    <mat-card-title>
+      Iniciar sesión
+    </mat-card-title>
   </mat-card-header>
-  <img src="assets/Logo.svg" width="100px">
-  <mat-card-content >
+  <img class="logo" src="assets/ingeniaCar.svg"/>
+  <mat-card-content>
     <form class="form-login">
       <table>
         <tr>
           <td>
-            <mat-form-field>
+            <mat-form-field style="width: 100%">
             <input matInput placeholder="Nombre de usuario" [(ngModel)]="username" name="username" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
-            <mat-form-field style="width:90%">
+            <mat-form-field>
               <input matInput placeholder="Contraseña" [(ngModel)]="password" [type]="hide ? 'password' : 'text'" name="password" required>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

@@ -2,22 +2,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
-  height: fit-content;
-  position: auto;
+  width: min-content;
+  height: min-content;
   margin: auto;
-  padding: 30px;
+  padding: 40px;
 }
 
 .login-main {
-  height: inherit;
-  background-image: linear-gradient(to top left, rgb(90, 11, 10), rgb(201, 25, 0));
+  background-image: linear-gradient(to top, rgb(84,13,22), rgb(211,31,54));
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
 }
 
 .form-login {
-  padding-top: 5%;
+  padding-top: 10%;
 }
 
 .pass-forgot {
-  margin-top: 15%;
+  margin-top: 10%;
+}
+
+.logo {
+  padding-top: 10%;
+  width: 8em;
+}
+
+.mat-raised-button
+{
+  background-color: rgb(211,31,54);
 }

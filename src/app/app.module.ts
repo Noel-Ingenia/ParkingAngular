@@ -10,11 +10,13 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatCardModule,
         MatDialogModule, MatTableModule, MatProgressSpinnerModule,  } from '@angular/material';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotpassComponent
   ],
   imports: [
     BrowserModule,
