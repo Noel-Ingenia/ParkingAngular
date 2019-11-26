@@ -1,4 +1,41 @@
-<p>login works!</p>
+<!-- <p>login works!</p>
 <div style="text-align:left" *ngFor="let user of users">
   <div>{{user.id}}{{user.pruebaCadena}}{{user.pruebaCadenaDos}}</div>
+</div> -->
+<div class="login-main">
+<br>
+<br>
+<mat-card class="card-login">
+  <mat-card-header>
+    <mat-card-title style="margin-bottom:20%">Iniciar sesión</mat-card-title>
+  </mat-card-header>
+  <img src="assets/Logo.svg" width="100px">
+  <mat-card-content >
+    <form class="form-login">
+      <table>
+        <tr>
+          <td>
+            <mat-form-field>
+            <input matInput placeholder="Nombre de usuario" [(ngModel)]="username" name="username" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field style="width:90%">
+              <input matInput placeholder="Contraseña" [(ngModel)]="password" [type]="hide ? 'password' : 'text'" name="password" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </td>
+      </tr></table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions class="button-login">
+    <button mat-raised-button (click)="login(email.value,password.value,$event)" color="warn">Iniciar sesión</button>
+  </mat-card-actions>
+  <a href="" class="pass-forgot mat-chip">¿Has olvidado tu contraseña?</a>
+</mat-card>
 </div>

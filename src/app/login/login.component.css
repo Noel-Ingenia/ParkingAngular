@@ -1,0 +1,23 @@
+.card-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  position: auto;
+  margin: auto;
+  padding: 30px;
+}
+
+.login-main {
+  height: inherit;
+  background-image: linear-gradient(to top left, rgb(90, 11, 10), rgb(201, 25, 0));
+}
+
+.form-login {
+  padding-top: 5%;
+}
+
+.pass-forgot {
+  margin-top: 15%;
+}
