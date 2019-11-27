@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UsersService } from './users.service';
-import { Users } from './models/Users'
+import { Users } from './models/Users';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,12 @@ import { Users } from './models/Users'
 })
 export class AppComponent {
   title = 'pruebaSQL';
-  userslist : Users[] = null;
+  userslist: Users[] = null;
 
-  usuario = new Users(0, "Email", "Password");
+  usuario = new Users(0, 'Email', 'Password');
   users: UsersService;
 
-  constructor (users: UsersService) {
+  constructor(users: UsersService) {
     this.users = users;
 
     users.getAllUsers().subscribe(
@@ -32,10 +32,10 @@ export class AppComponent {
   public createUser() {
     this.users.postUser(this.usuario).subscribe(
       (data: any ) => {
-        console.log("SUCCESS : " + data);
+        console.log('SUCCESS : ' + data);
       },
       error => {
-        console.log("ERROR : " + error);
+        console.log('ERROR : ' + error);
       }
     );
   }
