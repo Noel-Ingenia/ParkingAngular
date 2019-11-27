@@ -2,38 +2,59 @@
 <div style="text-align:left" *ngFor="let user of users">
   <div>{{user.id}}{{user.pruebaCadena}}{{user.pruebaCadenaDos}}</div>
 </div> -->
+
 <div class="login-main">
-<mat-card class="card-login">
-  <mat-card-header>
-    <mat-card-title>[Log In]</mat-card-title>
-    <mat-card-title>[Logo]</mat-card-title>
-  </mat-card-header>
-  <mat-card-content >
-    <form class="form-login">
-      <table>
-        <tr>
-          <td>
-            <mat-form-field>
-            <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field>
-              <input matInput placeholder="Password" [(ngModel)]="password" [type]="hide ? 'password' : 'text'" name="password" required>
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  <mat-card class="card-login">
+    <mat-card-header>
+      <mat-card-title>
+        Iniciar sesión
+      </mat-card-title>
+    </mat-card-header>
+    <img class="logo" src="assets/ingeniaCar.svg" />
+    <form class="form-login" [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
+      <mat-card-content>
+        <table>
+          <tr>
+            <td>
+              <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 1}">
+                <input matInput placeholder="Nombre de usuario" type="text" formControlName="email" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}">
+                <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="pass" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-            </mat-form-field>
-          </td>
-      </tr></table>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+      </mat-card-content>
+      <mat-card-actions class="button-login">
+        <button mat-raised-button color="warn" type="submit">Iniciar sesión</button>
+      </mat-card-actions>
     </form>
-    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-  </mat-card-content>
-  <mat-card-actions class = "button-login">
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
-  </mat-card-actions>
-  <a href="" class="pass-forgot">Forgot Password?</a>
-</mat-card>
+    <mat-chip-list class="pass-forgot">
+      <a mat-chip href="http://localhost:4200">¿Has olvidado tu contraseña?</a>
+    </mat-chip-list>
+  </mat-card>
 </div>
+
+<!--
+
+<form [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
+  <mat-form-field [ngClass]="{'mat-input-invalid': submitted && error?.code == 1}">
+    <input matInput type="text" formControlName="email" placeholder="Username" />
+  </mat-form-field>
+  <mat-form-field [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}">
+    <input matInput type="password" formControlName="pass" placeholder="Password" />
+  </mat-form-field>
+  <button mat-raised-button type="submit"> Sign In</button>
+</form>
+
+-->

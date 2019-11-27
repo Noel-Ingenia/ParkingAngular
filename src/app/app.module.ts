@@ -13,14 +13,14 @@ import { HomeComponent } from './home/home.component';
 import { AuthorizatedGuard} from './authorizated.guard';
 import {StorageService} from './services/storage.service';
 import { MatChipsModule} from '@angular/material/chips';
-
-
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent
+    ForgotpassComponent
   ],
   imports: [
     BrowserModule,
