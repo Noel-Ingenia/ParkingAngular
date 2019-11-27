@@ -3,7 +3,7 @@
 html {
     height: 100%;
     margin: 0px;
-    zoom: 110%;
+    zoom: 100%;
 }
 
 body {
@@ -12,4 +12,18 @@ body {
     height: 100%;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: rgb(84,13,22);
+    zoom: 110%
+}
+
+.mat-raised-button
+{
+  background-color: rgb(211,31,54);
+  zoom: 90%;
+  font-size: 110%; 
+  height: 2.3em;
+}
+
+.mat-icon
+{
+  zoom: 130%;
 }

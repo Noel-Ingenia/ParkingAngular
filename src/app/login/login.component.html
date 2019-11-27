@@ -22,7 +22,7 @@
         </tr>
         <tr>
           <td>
-            <mat-form-field>
+            <mat-form-field style="width: 100%">
               <input matInput placeholder="Contraseña" [(ngModel)]="password" [type]="hide ? 'password' : 'text'" name="password" required>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
