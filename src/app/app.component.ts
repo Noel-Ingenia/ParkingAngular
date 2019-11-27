@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { UsersService } from './users.service';
+import { UsersService } from './services/users.service';
 import { Users } from './models/Users';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [UsersService]
+  //providers: [UsersService]
+  providers: [AuthenticationService]
 })
 export class AppComponent {
-  title = 'pruebaSQL';
+  /*title = 'pruebaSQL';
   userslist: Users[] = null;
 
   usuario = new Users(0, 'Email', 'Password');
@@ -38,5 +40,5 @@ export class AppComponent {
         console.log('ERROR : ' + error);
       }
     );
-  }
+  }*/
 }

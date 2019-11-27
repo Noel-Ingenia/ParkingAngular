@@ -1,13 +1,12 @@
 export class Users {
     id: number;
-    pruebaCadena: string;
-    pruebaCadenaDos: string;
+    username: string;
+    pass?: string;
 
 
-    constructor(id: number, pruebaCadena: string, pruebaCadenaDos: string) {
+    constructor(id: number, username: string,  pass: string) {
       this.id = id;
-      this.pruebaCadena = pruebaCadena;
-      this.pruebaCadenaDos = pruebaCadenaDos;
-
+      this.username = username;
+      this.pass = pass;
     }
 }

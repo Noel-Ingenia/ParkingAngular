@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service';
+/*import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../services/login.service';
 import { Users} from '../models/Users';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +9,69 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private usersService: UsersService) { }
-  users: Users[];
+  router: any;
+  constructor(private loginService: LoginService) { }
   hide = true;
-  ngOnInit() {
-    this.usersService.getAllUsers().subscribe(
-    (data: any[] ) => {
-      this.users = data;
-      console.log(data);
+  public myToken;
 
+  ngOnInit() {
+    this.loginService.login('noeltrader@gmail.com', 'prueba').subscribe(
+      res => {console.log(res);
+
+      });
+  }
+}*/
+import {Component, OnInit} from '@angular/core';
+import {Validators, FormGroup, FormBuilder} from '@angular/forms';
+import {LoginObjects} from '../models/LoginObject';
+import {AuthenticationService} from '../services/authentication.service';
+import {StorageService} from '../services/storage.service';
+import {Router} from '@angular/router';
+import {Session} from '../models/Session';
+import { ReactiveFormsModule} from '@angular/forms';
+import {Md5} from 'ts-md5/dist/md5';
+@Component({
+  // tslint:disable-next-line:component-selector
+  selector: 'login',
+  templateUrl: 'login.component.html'
+})
+export class LoginComponent {
+  public loginForm: FormGroup;
+  // tslint:disable-next-line:no-inferrable-types
+  public submitted: boolean = false;
+  public error: {code: number, message: string} = null;
+  constructor(private formBuilder: FormBuilder,
+              private authenticationService: AuthenticationService,
+              private storageService: StorageService,
+              private router: Router) { }
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      pass: ['', Validators.required]
     });
   }
+  public submitLogin(): void {
+    this.submitted = true;
+    this.error = null;
+    if (this.loginForm.valid) {
+      //// encriptado de password///
+      const md5 = new Md5();
+      const encript = md5.appendStr(this.loginForm.value.pass).end();
+      this.loginForm.value.pass = encript;
+      //// fin encriptado////
 
+      this.authenticationService.login(new LoginObjects(this.loginForm.value)).subscribe(
+        data => {
+          this.correctLogin(data);
+          console.log(data);
+        },
+        error => this.error = JSON.parse(error._body)
 
+      )
+    }
+  }
+  private correctLogin(data: Session) {
+    this.storageService.setCurrentSession(data);
+    this.router.navigate(['/home']);
+  }
 }
