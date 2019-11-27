@@ -19,7 +19,7 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
     ForgotpassComponent
   ],
   imports: [
