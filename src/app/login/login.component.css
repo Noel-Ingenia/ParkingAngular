@@ -9,7 +9,6 @@
 }
 
 .login-main {
-  background-image: linear-gradient(to top, rgb(84,13,22), rgb(211,31,54));
   padding-top: 2.5em;
   padding-bottom: 2.5em;
 }
@@ -26,3 +25,8 @@
   padding-top: 10%;
   width: 8em;
 }
+
+/* .mat-raised-button
+{
+  background-color: rgb(211,31,54);
+} */

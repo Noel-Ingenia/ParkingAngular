@@ -4,6 +4,7 @@ html {
     height: 100%;
     margin: 0px;
     zoom: 100%;
+    background-color: rgb(84,13,22);
 }
 
 body {
@@ -11,19 +12,27 @@ body {
     width: 100%;
     height: 100%;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: rgb(84,13,22);
-    zoom: 110%
+    zoom: 110%;
+    background-image: linear-gradient(to top, rgb(84,13,22), rgb(211,31,54));
 }
 
 .mat-raised-button
 {
-  background-color: rgb(211,31,54);
   zoom: 90%;
-  font-size: 110%; 
-  height: 2.3em;
+  font-size: 1.3em; 
+  height: min-content;
 }
 
-.mat-icon
-{
+.mat-chip {
+  zoom: 90%;
+  color: rgba(211,31,54,0.8) !important;
+}
+
+.mat-icon {
   zoom: 130%;
+}
+
+a.mat-chip {
+text-decoration: inherit; 
+background-color: rgba(211,31,54,0.25) !important; 
 }
