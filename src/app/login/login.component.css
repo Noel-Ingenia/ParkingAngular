@@ -12,6 +12,17 @@
   padding-top: 2.5em;
   padding-bottom: 2.5em;
   zoom: 110%;
+  animation-duration: 0.7s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    padding-top: 0.7em;
+    opacity: 0%;
+  }
+
+  to { }
 }
 
 .form-login {
