@@ -1,0 +1,32 @@
+mat-toolbar{
+  background-color: #D31F35;
+}
+mat-icon{
+  color: #fff;
+}
+.mat-list-item{
+  color: #D31F35;
+}
+
+.logo-container{
+  text-align: center;
+  position: absolute;
+  width: 95%;
+}
+.pc{
+ opacity: 1;
+ margin-left:1em; margin-top: 0.15em;
+}
+.movil{
+  opacity: 0;
+}
+
+@media (max-width: 768px){
+  .pc{
+    opacity: 0;
+   }
+   .movil{
+     opacity: 1;
+   }
+
+}
