@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
 }*/
 
 import {Component, OnInit} from '@angular/core';
-import {StorageService} from '../services/storage.service';
-import {Users} from '../models/Users';
-import {AuthenticationService} from '../services/authentication.service';
+import {StorageService} from '../../services/storage.service';
+import {Users} from '../../models/Users';
+import {AuthenticationService} from '../../services/authentication.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.component.html'

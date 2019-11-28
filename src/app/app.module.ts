@@ -8,19 +8,32 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatCardModule,
-        MatDialogModule, MatTableModule, MatProgressSpinnerModule  } from '@angular/material';
-import { HomeComponent } from './home/home.component';
+        MatDialogModule, MatTableModule, MatProgressSpinnerModule, MatToolbarModule, MatSidenavModule,
+        MatListModule, MatNativeDateModule, MatDividerModule  } from '@angular/material';
+import { HomeComponent } from './menu-principal/home/home.component';
 import { AuthorizatedGuard} from './authorizated.guard';
 import {StorageService} from './services/storage.service';
 import { MatChipsModule} from '@angular/material/chips';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { LiberarComponent } from './menu-principal/liberar/liberar.component';
+import { SolicitarComponent } from './menu-principal/solicitar/solicitar.component';
+import { ReportarComponent } from './menu-principal/reportar/reportar.component';
+import { PerfilComponent } from './menu-principal/perfil/perfil.component';
+import { LogoutComponent } from './menu-principal/logout/logout.component';
+import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ForgotpassComponent
+    ForgotpassComponent,
+    LiberarComponent,
+    SolicitarComponent,
+    ReportarComponent,
+    PerfilComponent,
+    LogoutComponent,
+    MenuPrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +43,9 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule, MatProgressSpinnerModule,
-    MatIconModule, MatCardModule, MatDialogModule, MatTableModule,
-    MatChipsModule
+    MatSelectModule, MatProgressSpinnerModule, MatToolbarModule, MatSidenavModule,
+    MatIconModule, MatCardModule, MatDialogModule, MatTableModule, MatListModule,
+    MatChipsModule, MatNativeDateModule, MatDividerModule
 
 
   ],
