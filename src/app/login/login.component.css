@@ -5,12 +5,13 @@
   width: min-content;
   height: min-content;
   margin: auto;
-  padding: 40px;
+  padding: 35px;
 }
 
 .login-main {
   padding-top: 2.5em;
   padding-bottom: 2.5em;
+  zoom: 110%;
 }
 
 .form-login {
@@ -18,5 +19,10 @@
 }
 
 .pass-forgot {
-  margin-top: 10%;
+  margin-top: 0.8em;
+}
+ 
+img.logo { 
+  padding-top: 10%;
+  width: 8em !important;
 }
