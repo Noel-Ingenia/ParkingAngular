@@ -1,9 +1,9 @@
 export class LoginObjects {
-  username: string;
-  pass: string;
+  UserName: string;
+  UserPassword: string;
 
   constructor( object: any) {
-    this.username = (object.username) ? object.username : null;
-    this.pass = (object.pass) ? object.pass : null;
+    this.UserName = (object.UserName) ? object.UserName : null;
+    this.UserPassword = (object.UserPassword) ? object.UserPassword : null;
   }
 }

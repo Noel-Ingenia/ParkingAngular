@@ -47,8 +47,8 @@ export class LoginComponent {
               private router: Router) { }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      pass: ['', Validators.required]
+      UserName: ['', Validators.required],
+      UserPassword: ['', Validators.required]
     });
   }
   public submitLogin(): void {
@@ -57,8 +57,8 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       //// encriptado de password///
       const md5 = new Md5();
-      const encript = md5.appendStr(this.loginForm.value.pass).end();
-      this.loginForm.value.pass = encript;
+      const encript = md5.appendStr(this.loginForm.value.UserPassword).end();
+      this.loginForm.value.UserPassword = encript;
       //// fin encriptado////
 
       this.authenticationService.login(new LoginObjects(this.loginForm.value)).subscribe(
