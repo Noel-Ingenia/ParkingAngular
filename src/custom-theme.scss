@@ -2,8 +2,8 @@
 
 @include mat-core();
 
-$pruebaSQL-primary: mat-palette($mat-red);
-$pruebaSQL-accent: mat-palette($mat-pink, A200, A100, A400);
+$pruebaSQL-primary: mat-palette($mat-ingenia);
+$pruebaSQL-accent: mat-palette($mat-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $pruebaSQL-warn: mat-palette($mat-red);

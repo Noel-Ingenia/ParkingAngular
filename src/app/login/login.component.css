@@ -21,12 +21,8 @@
   margin-top: 10%;
 }
 
-.logo {
+img.logo {
   padding-top: 10%;
-  width: 8em;
+  width: 9em !important;
+  visibility: hidden;
 }
-
-/* .mat-raised-button
-{
-  background-color: rgb(211,31,54);
-} */
