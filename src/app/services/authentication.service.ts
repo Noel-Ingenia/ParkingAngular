@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import {Observable } from 'rxjs';
 import {LoginObjects} from '../../app/models/LoginObject';
 import { Session} from '../../app/models/Session';
-import {map} from 'rxjs/operators';
 
 
 @Injectable()

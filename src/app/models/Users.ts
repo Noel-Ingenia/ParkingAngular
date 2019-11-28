@@ -1,23 +1,23 @@
 export class Users {
-    id: number;
-    name: string;
-    surname: string;
-    username: string;
-    pass?: string;
-    email: string;
-    extraEmail: string;
-    idGroup: number;
+    Id: number;
+    EmployeeName: string;
+    EmployeeSurname: string;
+    UserName: string;
+    UserPassword?: string;
+    Email: string;
+    ExtraEmail: string;
+    IdGroup: number;
 
 
-    constructor(id: number, name: string, surname: string, username: string,
-                pass: string, email: string, extraEmail: string, idGroup: number) {
-      this.id = id;
-      this.username = username;
-      this.pass = pass;
-      this.name = name;
-      this.surname = surname;
-      this.email = email;
-      this.extraEmail = extraEmail;
-      this.idGroup = idGroup;
+    constructor(Id: number, EmployeeName: string, EmployeeSurname: string, UserName: string,
+                UserPassword: string, Email: string, ExtraEmail: string, IdGroup: number) {
+      this.Id = Id;
+      this.UserName = UserName;
+      this.UserPassword = UserPassword;
+      this.EmployeeName = EmployeeName;
+      this.EmployeeSurname = EmployeeSurname;
+      this.Email = Email;
+      this.ExtraEmail = ExtraEmail;
+      this.IdGroup = IdGroup;
     }
 }
