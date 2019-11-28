@@ -28,12 +28,13 @@ import {AuthenticationService} from '../services/authentication.service';
 import {StorageService} from '../services/storage.service';
 import {Router} from '@angular/router';
 import {Session} from '../models/Session';
-import { ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import {Md5} from 'ts-md5/dist/md5';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'login',
-  templateUrl: 'login.component.html'
+  templateUrl: 'login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   public loginForm: FormGroup;

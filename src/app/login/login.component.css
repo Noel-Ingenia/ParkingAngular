@@ -20,9 +20,8 @@
 .pass-forgot {
   margin-top: 10%;
 }
-
-img.logo {
+ 
+img.logo { 
   padding-top: 10%;
-  width: 9em !important;
-  visibility: hidden;
+  width: 8em !important;
 }

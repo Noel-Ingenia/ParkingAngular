@@ -20,7 +20,7 @@
                 <input matInput placeholder="Nombre de usuario" type="text" formControlName="username" required>
               </mat-form-field>
             </td>
-          </tr>
+          </tr> 
           <tr>
             <td>
               <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}">
@@ -35,8 +35,8 @@
         </table>
         <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
       </mat-card-content>
-      <mat-card-actions class="button-login">
-        <button mat-raised-button color="accent" type="submit">Iniciar sesión</button>
+      <mat-card-actions style="text-align: center;" class="button-login">
+        <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
       </mat-card-actions>
     </form>
     <mat-chip-list class="pass-forgot">
