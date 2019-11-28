@@ -1,0 +1,31 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <div class="logo-container">
+            <img class="movil" src="assets/logo-ingenia-simple.png">
+        </div>
+        <div>
+          <button class="align-middle" mat-icon-button>
+              <mat-icon class="align-middle" (click)="sidenav.toggle()">menu</mat-icon>
+          </button>
+          <img class="pc"  src="assets/logo-ingenia.png">
+        </div>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="'/home'" (click)="sidenav.toggle()"> Inicio </a>
+        <a mat-list-item [routerLink]="'/liberar'" (click)="sidenav.toggle()"> Liberar </a>
+        <a mat-list-item [routerLink]="'/solicitar'" (click)="sidenav.toggle()"> Solicitar </a>
+        <a mat-list-item [routerLink]="'/reportar'" (click)="sidenav.toggle()"> Reportar </a>
+        <a mat-list-item [routerLink]="'/perfil'" (click)="sidenav.toggle()"> Perfil </a>
+        <a mat-list-item [routerLink]="'/logout'" (click)="sidenav.toggle()" > Cerrar sesión </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
