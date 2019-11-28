@@ -24,8 +24,8 @@
           <tr>
             <td>
               <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}"> 
-                <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="UserPassword" minlength="1">
-                <button mat-icon-button matSuffix (click)='hide = !hide' [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide" type="button">
+                <input matInput placeholder="Contraseña" [type]="!hide ? 'password' : 'text'" formControlName="UserPassword" minlength="1">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="!hide" type="button">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
               </mat-form-field>
@@ -38,7 +38,7 @@
         <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
       </mat-card-actions>
     </form>
-      <button mat-button color="primary">¿Has olvidado tu contraseña?</button>
+      <button mat-button color="primary" type="button" style="border-radius: 10em;">¿Has olvidado tu contraseña?</button>
   </mat-card>
 </div>
 
