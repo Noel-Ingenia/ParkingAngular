@@ -17,18 +17,17 @@
           <tr>
             <td>
               <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 1}">
-                <input matInput placeholder="Nombre de usuario" type="text" formControlName="username" required>
+                <input matInput placeholder="Nombre de usuario" type="text" pattern="[a-z]{6,20}" formControlName="UserName">
               </mat-form-field>
             </td>
           </tr> 
           <tr>
             <td>
-              <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}">
-                <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="pass" required>
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'"
-                  [attr.aria-pressed]="hide">
+              <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}"> 
+                <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="UserPassword" minlength="1">
+                <button mat-icon-button matSuffix (click)='hide = !hide' [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide" type="button">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
+                </button>
               </mat-form-field>
             </td>
           </tr>
@@ -39,9 +38,7 @@
         <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
       </mat-card-actions>
     </form>
-    <mat-chip-list class="pass-forgot">
-      <a mat-chip href="/forgot">¿Has olvidado tu contraseña?</a>
-    </mat-chip-list>
+      <button mat-button color="primary">¿Has olvidado tu contraseña?</button>
   </mat-card>
 </div>
 
