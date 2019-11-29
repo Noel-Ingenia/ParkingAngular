@@ -17,16 +17,10 @@ body {
 
 .mat-raised-button
 {
-  zoom: 90%;
   font-size: 1.1em; 
 }
 
-.mat-button {
-  zoom: 90%;
-  color:"primary" !important;
-  font-size: 0.9em;
-}
-
-.mat-icon {
-  zoom: 130%;
-}
+.mat-icon-button .mat-icon
+{
+  font-size: 1.35em !important;
+} 

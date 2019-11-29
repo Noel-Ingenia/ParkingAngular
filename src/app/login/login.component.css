@@ -4,25 +4,30 @@
   align-items: center;
   width: min-content;
   height: min-content;
-  margin: auto !important;
-  padding: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.8em;
 }
 
 .login-main {
   padding-top: 2.5em;
   padding-bottom: 2.5em;
-  zoom: 110%;
-  animation-duration: 0.7s;
+  animation-duration: 0.8s;
   animation-name: slidein;
+  
 }
 
 @keyframes slidein {
   from {
-    padding-top: 0.7em;
     opacity: 0%;
+    padding-top: 0em;
   }
+}
 
-  to { }
+.mat-form-field
+{
+  font-size: 1.1em;
+  width: 13em !important;
 }
 
 .form-login {
@@ -36,4 +41,8 @@
 img.logo { 
   padding-top: 10%;
   width: 8em !important;
+}
+
+.mat-button {
+  font-size: 90%;
 }
