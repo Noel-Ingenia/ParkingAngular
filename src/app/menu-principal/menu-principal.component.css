@@ -1,8 +1,11 @@
+
+
 mat-toolbar{
-  background-color: #D31F35;
+  background-color: #FFFFFF;
+
 }
 mat-icon{
-  color: #fff;
+  color: RED
 }
 .mat-list-item{
   color: #D31F35;
@@ -21,12 +24,16 @@ mat-icon{
   opacity: 0;
 }
 
-@media (max-width: 768px){
+@media (max-width: 50%){
   .pc{
     opacity: 0;
    }
    .movil{
      opacity: 1;
    }
+}
 
+.mat-sidenav{
+  width: 25vh !important;
+  height: 100%;
 }

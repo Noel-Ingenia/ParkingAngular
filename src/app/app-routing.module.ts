@@ -9,19 +9,23 @@ import { SolicitarComponent } from './menu-principal/solicitar/solicitar.compone
 import { ReportarComponent } from './menu-principal/reportar/reportar.component';
 import { PerfilComponent } from './menu-principal/perfil/perfil.component';
 import { LogoutComponent } from './menu-principal/logout/logout.component';
+import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthorizatedGuard]},
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home'},
+  // { path: '**', redirectTo: '/principal'},
   { path: 'forgot', component: ForgotpassComponent},
-  { path: 'liberar', component: LiberarComponent},
-  { path: 'solicitar', component: SolicitarComponent},
-  { path: 'reportar', component: ReportarComponent },
-  { path: 'perfil', component: PerfilComponent},
-  { path: 'logout', component: LogoutComponent}
+  { path: '', component: MenuPrincipalComponent, canActivate: [AuthorizatedGuard],
+    children: [
+      { path: 'home', component: HomeComponent},
+      { path: 'liberar', component: LiberarComponent},
+      { path: 'solicitar', component: SolicitarComponent},
+      { path: 'reportar', component: ReportarComponent },
+      { path: 'perfil', component: PerfilComponent},
+      { path: 'logout', component: LogoutComponent}
+    ]},
+
 
 ];
 
