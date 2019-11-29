@@ -17,6 +17,6 @@ export class PerfilComponent implements OnInit {
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
-    this.user = this.storageService.getCurrentUser();
+    //this.user = this.storageService.getCurrentUser();
   }
 }
