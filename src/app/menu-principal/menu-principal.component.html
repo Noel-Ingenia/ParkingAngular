@@ -1,13 +1,9 @@
 <mat-toolbar>
     <mat-toolbar-row>
-        <div class="logo-container">
-            <img class="movil" src="assets/ingeniaCar.svg">
-        </div>
         <div>
-          <button class="align-middle" mat-icon-button>
+          <button mat-icon-button>
               <mat-icon class="align-middle" (click)="sidenav.toggle()">menu</mat-icon>
           </button>
-          <img class="pc"  src="assets/ingeniaCar.svg">
         </div>
 
     </mat-toolbar-row>
@@ -20,11 +16,11 @@
         <a mat-list-item [routerLink]="'/solicitar'" (click)="sidenav.toggle()"> Solicitar </a>
         <a mat-list-item [routerLink]="'/reportar'" (click)="sidenav.toggle()"> Reportar </a>
         <a mat-list-item [routerLink]="'/perfil'" (click)="sidenav.toggle()"> Perfil </a>
-        <a mat-list-item [routerLink]="'/logout'" (click)="sidenav.toggle()" > Cerrar sesión </a>
+        <a mat-list-item (click)="logout()" > Cerrar sesión </a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div style="height: 88vh;">
+      <div style="height: 100vh;">
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
