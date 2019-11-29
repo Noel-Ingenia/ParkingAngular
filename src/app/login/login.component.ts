@@ -30,6 +30,7 @@ import {Router} from '@angular/router';
 import {Session} from '../models/Session';
 import {ReactiveFormsModule} from '@angular/forms';
 import {Md5} from 'ts-md5/dist/md5';
+import * as jwt_decode from 'jwt-decode';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'login',
@@ -68,7 +69,7 @@ export class LoginComponent {
         },
         error => this.error = JSON.parse(error._body)
 
-      )
+      );
     }
   }
   private correctLogin(data: Session) {

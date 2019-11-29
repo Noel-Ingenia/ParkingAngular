@@ -18,6 +18,8 @@ import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../../services/storage.service';
 import {Users} from '../../models/Users';
 import {AuthenticationService} from '../../services/authentication.service';
+import * as jwt_decode from 'jwt-decode';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.component.html',
@@ -32,9 +34,10 @@ export class HomeComponent {
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
-    this.user = this.storageService.getCurrentUser();
+    const token = this.storageService.getCurrentUser();
+    this.user = jwt_decode(token);
+    console.log(this.user);
+    // this.user = this.storageService.getCurrentUser();
   }
-  public logout(): void {
-    this.storageService.logout();
-  }
+
 }

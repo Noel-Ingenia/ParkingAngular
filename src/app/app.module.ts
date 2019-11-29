@@ -19,7 +19,6 @@ import { LiberarComponent } from './menu-principal/liberar/liberar.component';
 import { SolicitarComponent } from './menu-principal/solicitar/solicitar.component';
 import { ReportarComponent } from './menu-principal/reportar/reportar.component';
 import { PerfilComponent } from './menu-principal/perfil/perfil.component';
-import { LogoutComponent } from './menu-principal/logout/logout.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
     SolicitarComponent,
     ReportarComponent,
     PerfilComponent,
-    LogoutComponent,
     MenuPrincipalComponent
   ],
   imports: [

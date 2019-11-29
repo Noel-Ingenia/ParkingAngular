@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../services/storage.service';
 
 
 
@@ -9,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPrincipalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
+  }
+
+  public logout(): void {
+    this.storageService.logout();
   }
 
 }

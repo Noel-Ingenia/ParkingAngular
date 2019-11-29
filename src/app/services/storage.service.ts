@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Session } from '../models/Session';
 import { Router } from '@angular/router';
 import { Users } from '../models/Users';
+import * as jwt_decode from 'jwt-decode';
+import { ControlContainer } from '@angular/forms';
 
 @Injectable()
 export class StorageService {
@@ -32,16 +34,17 @@ export class StorageService {
       this.localStorageService.removeItem('currentUser');
       this.currentSession = null;
     }
-    getCurrentUser(): Users {
+    getCurrentUser(): Session {
       const session: Session = this.getCurrentSession();
-      return (session && session.user) ? session.user : null;
+      return (session);
     }
     isAuthenticated(): boolean {
       return (this.getCurrentToken() != null) ? true : false;
     }
-    getCurrentToken(): string {
+    getCurrentToken(): Session {
+
       const session = this.getCurrentSession();
-      return (session && session.token) ? session.token : null;
+      return (session);
     }
     logout(): void {
       this.removeCurrentSession();
