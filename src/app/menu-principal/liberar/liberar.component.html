@@ -1,1 +1,7 @@
-<p>liberar works!</p>
+<h1>Usted ha liberado los siguientes dias:</h1>
+<ul >
+  <li *ngFor = "let dato of datosPlazas">
+    {{dato.SelectedDay}}
+      <button mat-button color="primary" href = "">Cancelar</button>
+  </li>
+</ul>

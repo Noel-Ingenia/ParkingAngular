@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   { path: 'forgot', component: ForgotpassComponent},
   { path: '', component: MenuPrincipalComponent, canActivate: [AuthorizatedGuard],
     children: [
-      { path: 'home', component: HomeComponent},
+      { path: 'home', component: HomeComponent, canActivate: [AuthorizatedGuard]},
       { path: 'liberar', component: LiberarComponent},
       { path: 'solicitar', component: SolicitarComponent},
       { path: 'reportar', component: ReportarComponent },
