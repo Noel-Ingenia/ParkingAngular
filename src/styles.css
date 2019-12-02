@@ -24,3 +24,8 @@ body {
 {
   font-size: 1.35em !important;
 } 
+
+.mat-list-base
+{
+  padding-top: 0px !important;
+}
