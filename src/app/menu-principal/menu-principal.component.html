@@ -1,12 +1,13 @@
 <mat-toolbar>
     <mat-toolbar-row>
-        <div>
+        <div class="flexy">
           <button mat-icon-button>
-              <mat-icon class="icon" class="align-middle" (click)="sidenav.toggle()">menu</mat-icon>
+              <mat-icon class="icon" (click)="sidenav.toggle()">menu</mat-icon>
           </button>
-          <img src='../src/assets/ingeniaCar.svg' width="300px">
+          <div class="logo-container">
+            <img class="logo" src='/assets/ingeniaCar.svg'>
+          </div>
         </div>
-
     </mat-toolbar-row>
   </mat-toolbar>
   <mat-sidenav-container>
