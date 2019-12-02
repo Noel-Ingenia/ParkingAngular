@@ -23,5 +23,9 @@ body {
 .mat-icon-button .mat-icon
 {
   font-size: 1.35em !important;
-  
 } 
+
+.mat-list-base
+{
+  padding-top: 0px !important;
+}

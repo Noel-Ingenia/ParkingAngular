@@ -15,7 +15,8 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   // { path: '**', redirectTo: '/principal'},
   { path: 'forgot', component: ForgotpassComponent},
-  { path: '', component: MenuPrincipalComponent, canActivate: [AuthorizatedGuard],
+  { path: '', component: MenuPrincipalComponent,
+  //  canActivate: [AuthorizatedGuard],
     children: [
       { path: 'home', component: HomeComponent},
       { path: 'liberar', component: LiberarComponent},
