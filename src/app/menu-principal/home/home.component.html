@@ -1,3 +1,8 @@
-<mat-chip-list><mat-chip color="primary">hola!!</mat-chip></mat-chip-list>
-<p>home works!</p>
-<h1>Hi {{user.EmployeeName}} {{user.EmployeeSurname}}</h1>
+<h1>¡Hola {{user.EmployeeName}} {{user.EmployeeSurname}}!</h1>
+<ul >
+  <li *ngFor = "let dato of datosPlazas">
+    Tu plaza es: {{dato.PlaceName}}
+    Tu parking es: {{dato.ParkingName}}
+    Ver mapa {{dato.MapUrl}}
+  </li>
+</ul>

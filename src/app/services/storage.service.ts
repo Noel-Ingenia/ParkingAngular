@@ -4,14 +4,18 @@ import { Router } from '@angular/router';
 import { Users } from '../models/Users';
 import * as jwt_decode from 'jwt-decode';
 import { ControlContainer } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import {Observable } from 'rxjs';
+import {LoginObjects} from '../../app/models/LoginObject';
 
 @Injectable()
 export class StorageService {
 
  private localStorageService;
  private currentSession: Session = null;
+ private basePath = 'http://192.168.19.116:3000/';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient) {
     this.localStorageService = localStorage;
     this.currentSession = this.loadSessionData();
    }
@@ -20,8 +24,6 @@ export class StorageService {
     this.currentSession = session;
     this.localStorageService.setItem('currentUser', JSON.stringify(session));
    }
-
-
    loadSessionData(): Session {
     const sessionStr = this.localStorageService.getItem('currentUser');
     return (sessionStr) ? JSON.parse(sessionStr) as Session : null;
@@ -50,5 +52,7 @@ export class StorageService {
       this.removeCurrentSession();
       this.router.navigate(['/login']);
     }
+
+
 
 }
