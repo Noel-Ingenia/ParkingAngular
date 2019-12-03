@@ -20,6 +20,8 @@ import { SolicitarComponent } from './menu-principal/solicitar/solicitar.compone
 import { ReportarComponent } from './menu-principal/reportar/reportar.component';
 import { PerfilComponent } from './menu-principal/perfil/perfil.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, SatDatepickerModule } from 'saturn-datepicker';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
     SolicitarComponent,
     ReportarComponent,
     PerfilComponent,
-    MenuPrincipalComponent
+    MenuPrincipalComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,11 +45,14 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
     MatButtonModule,
     MatSelectModule, MatProgressSpinnerModule, MatToolbarModule, MatSidenavModule,
     MatIconModule, MatCardModule, MatDialogModule, MatTableModule, MatListModule,
-    MatChipsModule, MatNativeDateModule, MatDividerModule
-
+    MatChipsModule, MatNativeDateModule, MatDividerModule,
+    SatDatepickerModule
 
   ],
-  providers: [AuthorizatedGuard, StorageService],
+  providers: [AuthorizatedGuard, StorageService, 
+  {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+  {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

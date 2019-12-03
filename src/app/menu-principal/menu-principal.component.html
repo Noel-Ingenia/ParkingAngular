@@ -13,12 +13,12 @@
   <mat-sidenav-container>
     <mat-sidenav #sidenav autoFocus="false" mode="over">
       <mat-nav-list>
-        <a mat-list-item [routerLink]="'/home'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']"> Inicio </a>
-        <a mat-list-item [routerLink]="'/liberar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']"> Liberar </a>
-        <a mat-list-item [routerLink]="'/solicitar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']"> Solicitar </a>
-        <a mat-list-item [routerLink]="'/reportar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']"> Reportar </a>
-        <a mat-list-item [routerLink]="'/perfil'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']"> Perfil </a>
-        <a mat-list-item (click)="logout()" > Cerrar sesión </a>
+        <a mat-list-item [routerLink]="'/home'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Inicio</a>
+        <a mat-list-item [routerLink]="'/liberar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Liberar</a>
+        <a mat-list-item [routerLink]="'/solicitar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Solicitar</a>
+        <a mat-list-item [routerLink]="'/reportar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Reportar</a>
+        <a mat-list-item [routerLink]="'/perfil'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Perfil</a>
+        <a mat-list-item (click)="logout()" >&emsp;Cerrar sesión</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
