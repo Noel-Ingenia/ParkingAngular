@@ -1,1 +1,38 @@
-<p>solicitar works!</p>
+<h1>Solicitar plaza</h1>
+
+<div class="flexy">
+    <mat-card>
+        <mat-card-title>
+            Mis solicitudes
+        </mat-card-title>
+        <mat-card-subtitle>
+            A continuación se muestran las solicitudes de aparcamiento que has realizado.
+        </mat-card-subtitle>
+        <mat-card-content>
+            <br>
+        </mat-card-content> 
+    </mat-card>
+    <div class="separator"></div>
+    <mat-card>
+        <mat-card-title>
+            Nueva solicitud
+        </mat-card-title>
+        <mat-card-subtitle>
+            Aquí podrás crear una nueva solicitud de plaza, de intervalos de tiempo o bien de días sueltos.
+        </mat-card-subtitle>
+        <form [formGroup]="formDate" (ngSubmit)="submitSolicitar()">
+        <mat-card-content>
+            <br>
+            <mat-form-field class="space-next">
+                <input matInput placeholder="Selecciona un intervalo" [satDatepicker]="picker1"
+                    formControlName="date">
+                <sat-datepicker #picker1 [rangeMode]="true" [closeAfterSelection]="false"
+                    [selectFirstDateOnClose]="true" color="primary">
+                </sat-datepicker>
+                <sat-datepicker-toggle mat-icon-button matSuffix [for]="picker1"></sat-datepicker-toggle>
+            </mat-form-field><button mat-raised-button color="primary" type="submit">Solicitar</button>
+        </mat-card-content>
+    </form>
+    </mat-card>
+</div>
+<div class="final-separator"></div>
