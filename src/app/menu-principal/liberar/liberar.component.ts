@@ -11,6 +11,7 @@ import { SatCalendar, SatCalendarFooter, SatDatepicker } from 'saturn-datepicker
 import { DateAdapter } from 'saturn-datepicker';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import * as moment from 'moment';
+import { Liberar } from 'src/app/models/Liberar';
 
 
 
@@ -65,7 +66,7 @@ export class LiberarComponent implements OnInit {
 
   public submitLiberar(){
     if (this.formDate.valid) {
-      this.storageService.createLiberar(this.formDate.value).subscribe(res => {
+      this.createLiberar(this.formDate.value).subscribe(res => {
         console.log('creado!');
       });
       // this.formDate.setItem('currentUser', JSON.stringify(session));
@@ -79,7 +80,10 @@ export class LiberarComponent implements OnInit {
           return this.http.get<Session>(this.basePath + 'home?IdUser=' + this.user.Id);
       }
 
-
+      createLiberar(data): Observable<Liberar> {
+        console.log(data);
+        return this.http.post<Liberar>(this.basePath + 'releases?IdUser=' + this.user.Id, data);
+      }
 
 }
 

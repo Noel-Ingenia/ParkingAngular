@@ -54,9 +54,7 @@ export class StorageService {
       this.router.navigate(['/login']);
     }
 
-    createLiberar(data): Observable<Liberar> {
-      return this.http.post<Liberar>(this.basePath + 'releases', JSON.stringify(data));
-    }
+
 
 
 
