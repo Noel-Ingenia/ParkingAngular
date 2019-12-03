@@ -7,6 +7,7 @@ import { ControlContainer } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import {Observable } from 'rxjs';
 import {LoginObjects} from '../../app/models/LoginObject';
+import { Liberar } from '../models/Liberar';
 
 @Injectable()
 export class StorageService {
@@ -51,6 +52,10 @@ export class StorageService {
     logout(): void {
       this.removeCurrentSession();
       this.router.navigate(['/login']);
+    }
+
+    createLiberar(data): Observable<Liberar> {
+      return this.http.post<Liberar>(this.basePath + 'releases', JSON.stringify(data));
     }
 
 

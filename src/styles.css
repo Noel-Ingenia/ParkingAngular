@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 html {
     height: 100%;
     margin: 0px;
@@ -17,15 +18,16 @@ body {
 
 .mat-raised-button
 {
-  font-size: 1.1em; 
+  font-size: 1.1em;
 }
 
 .mat-icon-button .mat-icon
 {
   font-size: 1.35em !important;
-} 
+}
 
 .mat-list-base
 {
   padding-top: 0px !important;
 }
+

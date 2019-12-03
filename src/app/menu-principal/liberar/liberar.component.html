@@ -1,3 +1,4 @@
+<div>
 <h1>Usted ha liberado los siguientes dias:</h1>
 <ul >
   <li *ngFor = "let dato of datosPlazas">
@@ -5,3 +6,21 @@
       <button mat-button color="primary" href = "">Cancelar</button>
   </li>
 </ul>
+</div>
+<div>
+<h1>Desea liberar otras fechas?</h1>
+<form [formGroup]="formDate" (ngSubmit)="submitLiberar()">
+<section>
+    <mat-form-field>
+        <input matInput
+               placeholder="Choose a date"
+               [satDatepicker]="picker"
+               formControlName="date">
+        <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+        <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
+    </mat-form-field>
+  </section>
+  <button mat-button color="primary" type="submit">Liberar</button>
+</form>
+</div>
+
