@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {Observable } from 'rxjs';
 import {LoginObjects} from '../../app/models/LoginObject';
 import { Session} from '../../app/models/Session';
+import { Liberar } from '../models/Liberar';
 
 
 @Injectable()
@@ -18,5 +19,6 @@ export class AuthenticationService {
   logout(): Observable<boolean> {
   return this.http.post<boolean>(this.basePath + 'logout', {});
   }
+
 
 }

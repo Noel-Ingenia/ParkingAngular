@@ -12,7 +12,7 @@ import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatCar
         MatListModule, MatNativeDateModule, MatDividerModule  } from '@angular/material';
 import { HomeComponent } from './menu-principal/home/home.component';
 import { AuthorizatedGuard} from './authorizated.guard';
-import {StorageService} from './services/storage.service';
+import { StorageService} from './services/storage.service';
 import { MatChipsModule} from '@angular/material/chips';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { LiberarComponent } from './menu-principal/liberar/liberar.component';
@@ -47,12 +47,13 @@ import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-mo
     MatIconModule, MatCardModule, MatDialogModule, MatTableModule, MatListModule,
     MatChipsModule, MatNativeDateModule, MatDividerModule,
     SatDatepickerModule
-
   ],
-  providers: [AuthorizatedGuard, StorageService, 
-  {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-  {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+  
+  providers: [AuthorizatedGuard, StorageService,
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
+
 export class AppModule { }
