@@ -1,6 +1,5 @@
-mat-toolbar{
+mat-toolbar-row{
   background-color: #FFFFFF;
-  width: inherit;
 }
 
 .mat-icon-button{
@@ -9,7 +8,7 @@ mat-toolbar{
 
 .mat-icon{
   color: #D31F35;
-  transform: scale(1.5);
+  transform: scale(1.4);
 }
 
 .mat-list-item{
@@ -29,18 +28,30 @@ mat-toolbar{
   width: inherit;
   height: 100%;
   align-items: center;
-  padding-left: 3.5em;
-  padding-right: 3em;
-  margin-left: -2.5em;
+  padding-left: 2em;
+  padding-right: 2.5em;
+  margin-left: -1.5em;
 }
 
 .logo {
 height: 2em;
-margin: auto;
+margin-left: auto;
+margin-right: auto;
+padding-top: 0.1em;
 }
 
 .mat-sidenav {
-  width: 30vh !important;
+  width: 25% !important;
+  min-width: 13em;
+  max-width: 17em;
+}
+
+mat-sidenav-container
+{
+  position: fixed !important;
+  height: 100%;
+  width: 100% !important;
+  background-image: linear-gradient(to top, rgb(84,13,22), rgb(211,31,54));
 }
 
 .is-active
@@ -51,5 +62,13 @@ margin: auto;
 
 .mat-list-item:hover:not(.is-active)
 {
-  background-color: rgba(211, 31, 53, 0.01) !important;
+  background-color: rgba(50, 50, 50, 0.7) !important;
+  color: white !important;
+}
+
+.mat-sidenav-content
+{
+  padding-left: 1.5em !important;
+  padding-right: 1.5em !important;
+  background-image: linear-gradient(to top, rgb(84,13,22), rgb(211,31,54));
 }
