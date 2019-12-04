@@ -26,8 +26,8 @@
             <mat-form-field class="space-next">
                 <input matInput placeholder="Selecciona un intervalo" [satDatepicker]="picker1"
                     formControlName="date">
-                <sat-datepicker #picker1 [rangeMode]="true" [closeAfterSelection]="false"
-                    [selectFirstDateOnClose]="true" color="primary">
+                <sat-datepicker #picker1 [rangeMode]="true" [closeAfterSelection]="true"
+                    [selectFirstDateOnClose]="false" color="primary">
                 </sat-datepicker>
                 <sat-datepicker-toggle mat-icon-button matSuffix [for]="picker1"></sat-datepicker-toggle>
             </mat-form-field><button mat-raised-button color="primary" type="submit">Solicitar</button>
