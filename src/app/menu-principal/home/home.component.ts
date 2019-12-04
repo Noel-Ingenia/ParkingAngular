@@ -15,6 +15,8 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent {
   public user: Users;
   private basePath = 'http://192.168.19.116:3000/';
+  // private basePath = 'http://localhost:3000/';
+
   public datosPlazas;
 
   constructor(

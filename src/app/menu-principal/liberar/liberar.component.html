@@ -1,26 +1,42 @@
-<div>
 <h1>Usted ha liberado los siguientes dias:</h1>
-<ul >
-  <li *ngFor = "let dato of datosPlazas">
-    {{dato.SelectedDay}}
-      <button mat-button color="primary" href = "">Cancelar</button>
-  </li>
-</ul>
+<div class="flexy">
+    <mat-card>
+        <mat-card-title>
+            Mis liberaciones
+        </mat-card-title>
+        <mat-card-subtitle>
+            A continuación se muestran las liberaciones de aparcamiento que has realizado.
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ul >
+            <li *ngFor = "let dato of datosPlazas">
+              {{dato.SelectedDay |date:"fullDate" | uppercase}}
+                <button mat-button color="primary" href = "">Cancelar</button>
+            </li>
+          </ul>
+        </mat-card-content>
+    </mat-card>
+    <div class="separator"></div>
+    <mat-card>
+        <mat-card-title>
+            Desea liberar otras fechas?
+        </mat-card-title>
+        <mat-card-subtitle>
+            Aquí podrás crear una nueva liberacion de plaza
+        </mat-card-subtitle>
+          <form [formGroup]="formDate" (ngSubmit)="submitLiberar()">
+          <section>
+              <mat-form-field>
+                  <input matInput
+                        placeholder="Choose a date"
+                        [satDatepicker]="picker"
+                        formControlName="date">
+                  <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+                  <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
+              </mat-form-field>
+            </section>
+            <button mat-button color="primary" type="submit">Liberar</button>
+          </form>
+      </mat-card>
 </div>
-<div>
-<h1>Desea liberar otras fechas?</h1>
-<form [formGroup]="formDate" (ngSubmit)="submitLiberar()">
-<section>
-    <mat-form-field>
-        <input matInput
-               placeholder="Choose a date"
-               [satDatepicker]="picker"
-               formControlName="date">
-        <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
-        <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-    </mat-form-field>
-  </section>
-  <button mat-button color="primary" type="submit">Liberar</button>
-</form>
-</div>
-
+<div class="final-separator"></div>

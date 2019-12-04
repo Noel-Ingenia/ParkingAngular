@@ -86,8 +86,3 @@ export class LiberarComponent implements OnInit {
       }
 
 }
-
-export interface SatDatepickerRangeValue<D> {
-  begin: D | null;
-  end: D | null;
-}
