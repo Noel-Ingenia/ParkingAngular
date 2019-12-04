@@ -1,8 +1,12 @@
 <h1>¡Hola {{user.EmployeeName}} {{user.EmployeeSurname}}!</h1>
-<ul >
-  <li *ngFor = "let dato of datosPlazas">
-    Tu plaza es: {{dato.PlaceName}}
-    Tu parking es: {{dato.ParkingName}}
-    Ver mapa {{dato.MapUrl}}
-  </li>
-</ul>
+<div class="flexy">
+    <mat-card>
+        <mat-card-title>
+          <ul *ngFor = "let dato of datosPlazas">
+              Tu plaza es {{dato.PlaceName}} <br>
+              Parking {{dato.ParkingName}} <br>
+              Ver mapa {{dato.MapUrl}}
+          </ul>
+        </mat-card-title>
+      </mat-card>
+</div>

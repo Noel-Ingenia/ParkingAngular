@@ -18,7 +18,7 @@
         <a mat-list-item [routerLink]="'/solicitar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Solicitar</a>
         <a mat-list-item [routerLink]="'/reportar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Reportar</a>
         <a mat-list-item [routerLink]="'/perfil'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Perfil</a>
-        <a mat-list-item (click)="logout()" >&emsp;Cerrar sesión</a>
+        <a mat-list-item (click)="openDialog()">Cerrar sesión</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -26,4 +26,4 @@
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
-  </mat-sidenav-container> 
+  </mat-sidenav-container>

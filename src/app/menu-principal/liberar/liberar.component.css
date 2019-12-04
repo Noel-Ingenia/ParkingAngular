@@ -15,3 +15,93 @@ section > div {
   width: 300px;
 }
 
+:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-semi-selected), .cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-semi-selected), .cdk-program-focused   .mat-calendar-body-active    > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-semi-selected) {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+:not(div.mat-calendar-body-disabled):hover > .mat-calendar-body-semi-selected, .cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-semi-selected, .cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-semi-selected {
+  background-color: #3f51b5 !important;
+  color: white !important;
+}
+
+.mat-calendar-body-begin-range:not(.mat-calendar-body-end-range) {
+  border-radius: 100% 0 0 100% !important;
+  background-color: #c5cae9 !important;
+}
+
+.mat-calendar-body-end-range:not(.mat-calendar-body-begin-range) {
+  border-radius: 0 100% 100% 0 !important;
+  background-color: #c5cae9 !important;
+}
+
+.mat-calendar-body    > tr   .mat-calendar-cell-semi-selected  ~ .mat-calendar-cell-semi-selected {
+  border-radius: 0 !important;
+}
+
+.mat-calendar-cell-semi-selected {
+  background-color: #c5cae9 !important;
+}
+
+.mat-calendar-cell-over > .mat-calendar-body-cell-content {
+  border: #3f51b5 1px solid !important;
+}
+
+/* OTHER STYLES */
+h1
+{
+color: white;
+font-weight:500;
+font-size: 28pt;
+}
+
+sat-datepicker-toggle{
+  font-size: 1.4em !important;
+}
+
+.flexy {
+  display: flex;
+  flex-flow: column;
+}
+
+@media (min-width: 550px)
+{
+  .flexy {
+      flex-flow: row;
+  }
+
+  .final-separator{
+      min-height: 0.5em;
+  }
+}
+
+@media (max-width: 350px)
+{
+  .mat-card
+  {
+      padding: 1em !important;
+      margin: -0.5em -0.5em -0.5em -0.5em !important;
+  }
+}
+
+mat-card
+{
+  margin: 0 0 0 0;
+  padding: 1.7em !important;
+}
+
+.separator
+{
+  min-width: 1.3em;
+  min-height: 1.3em;
+}
+
+.final-separator
+{
+  min-height: 5em;
+}
+
+.space-next
+{
+  margin-right: 2.5em;
+}
+
