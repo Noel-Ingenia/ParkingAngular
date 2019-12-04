@@ -62,7 +62,7 @@ sat-datepicker-toggle{
     .mat-card
     {
         padding: 1em !important;
-        margin: -0.5em -0.5em -0.5em -0.5em !important;
+        margin: -0.2em !important;
     }
 }
 
@@ -85,5 +85,5 @@ mat-card
 
 .space-next
 {
-    margin-right: 2.5em;
+    margin-right: 2em;
 }
