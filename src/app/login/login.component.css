@@ -36,12 +36,16 @@
 .pass-forgot {
   margin-top: 0.8em;
 }
- 
-img.logo { 
+
+img.logo {
   padding-top: 10%;
   width: 8em !important;
 }
 
 .mat-button {
   font-size: 90%;
+}
+.mensaje{
+  text-align: center;
+  color: rgb(211,31,54);
 }
