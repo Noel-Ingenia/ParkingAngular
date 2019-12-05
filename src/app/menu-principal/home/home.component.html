@@ -1,12 +1,21 @@
-<h1>¡Hola {{user.EmployeeName}} {{user.EmployeeSurname}}!</h1>
 <div class="flexy">
+ 
+<img src="/assets/profile-pic.jpg" [class.mat-elevation-z8]="isActive" class="circle-mask profile-pic">
+<h1>¡Hola, {{user.EmployeeName}} {{user.EmployeeSurname}}!</h1>
     <mat-card>
         <mat-card-title>
-          <ul *ngFor = "let dato of datosPlazas">
-              Tu plaza es {{dato.PlaceName}} <br>
-              Parking {{dato.ParkingName}} <br>
-              Ver mapa {{dato.MapUrl}}
-          </ul>
         </mat-card-title>
-      </mat-card>
+        <mat-card-content>
+          <div class="mini-flexy">
+              <div *ngFor = "let dato of datosPlazas; let i = index">
+                <h2 *ngIf="i==0">Tu plaza hoy</h2>
+                <h2 *ngIf="i==1">Tu plaza mañana</h2>
+                <hr>
+                <p>Tu plaza es {{dato.PlaceName}} - Parking {{dato.ParkingName}}</p>
+                <p><a href="{{dato.MapUrl}}">Ver mapa</a></p>
+                <br>
+              </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
 </div>

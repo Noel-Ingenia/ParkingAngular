@@ -62,7 +62,11 @@ sat-datepicker-toggle{
     .mat-card
     {
         padding: 1em !important;
-        margin: -0.2em !important;
+        margin-top: -0.2em !important;
+        margin-bottom: -0.2em !important;
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
     }
 }
 
@@ -70,6 +74,9 @@ mat-card
 {
     margin: 0 0 0 0;
     padding: 1.7em !important;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
 }
 
 .separator

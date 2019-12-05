@@ -2,6 +2,12 @@ mat-toolbar-row{
   background-color: #FFFFFF;
 }
 
+@keyframes slidein {
+    0% { opacity: 0; margin-right: 60% }
+    10% { opacity: 1; }
+    100% { margin-right: 0%; opacity: 1 }
+  }
+
 .mat-icon-button{
   zoom: 110%;
 }
@@ -25,19 +31,23 @@ mat-toolbar-row{
 .logo-container
 {
   display: inline-flex;
+  opacity: 0;
   width: inherit;
   height: 100%;
   align-items: center;
-  padding-left: 2em;
-  padding-right: 2.5em;
-  margin-left: -1.5em;
+  padding-right: 2.8em;
+  animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards; 
 }
 
 .logo {
-height: 2em;
-margin-left: auto;
-margin-right: auto;
-padding-top: 0.1em;
+  height: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5em;
+  padding-top: 0.1em;
 }
 
 .mat-sidenav {
@@ -51,7 +61,7 @@ mat-sidenav-container
   position: fixed !important;
   height: 100%;
   width: 100% !important;
-  background-image: linear-gradient(to top, rgb(84,13,22), rgb(211,31,54));
+  background-image: linear-gradient(to top, rgb(148, 22, 39), rgb(211,31,54));
 }
 
 .is-active
@@ -68,7 +78,23 @@ mat-sidenav-container
 
 .mat-sidenav-content
 {
-  padding-left: 1.5em !important;
-  padding-right: 1.5em !important;
-  background-image: linear-gradient(to top, rgb(84,13,22), rgb(211,31,54));
+  padding-top: 1em;
+  padding-left: 3.3em;
+  padding-right: 3.3em;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+@media (max-width: 680px)
+{
+    .mat-sidenav-content
+    {
+      padding-top: 0.3em;
+      padding-left: 1.3em;
+      padding-right: 1.3em;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+    }
 }

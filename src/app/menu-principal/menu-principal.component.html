@@ -1,7 +1,7 @@
 <mat-toolbar>
     <mat-toolbar-row>
         <div class="flexy">
-          <button mat-icon-button>
+          <button mat-icon-button (keydown.enter)="sidenav.toggle()">
               <mat-icon class="icon" (click)="sidenav.toggle()">menu</mat-icon>
           </button>
           <div class="logo-container">
@@ -18,7 +18,7 @@
         <a mat-list-item [routerLink]="'/solicitar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Solicitar</a>
         <a mat-list-item [routerLink]="'/reportar'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Reportar</a>
         <a mat-list-item [routerLink]="'/perfil'" (click)="sidenav.toggle()" [routerLinkActive]="['is-active']">&emsp;Perfil</a>
-        <a mat-list-item (click)="openDialog()">Cerrar sesión</a>
+        <a mat-list-item (click)="openDialog()" [routerLink]="">&emsp;Cerrar sesión</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
