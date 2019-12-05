@@ -12,6 +12,7 @@ import { DateAdapter } from 'saturn-datepicker';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import * as moment from 'moment';
 import { Liberar } from 'src/app/models/Liberar';
+import { Router } from '@angular/router';
 
 
 
@@ -33,6 +34,7 @@ export class LiberarComponent implements OnInit {
     private storageService: StorageService,
     private authenticationService: AuthenticationService,
     private http: HttpClient,
+    private router: Router,
     // PARA SELECCION LIBERACION PLAZA //
     public formBuilder: FormBuilder
     ) { }
@@ -69,6 +71,7 @@ export class LiberarComponent implements OnInit {
       this.createLiberar(this.formDate.value).subscribe(res => {
         console.log('creado!');
       });
+      this.router.navigate(['/liberar']);
       // this.formDate.setItem('currentUser', JSON.stringify(session));
       // return this.http.post(this.basePath + 'releases', this.formDate);
     }
@@ -77,7 +80,7 @@ export class LiberarComponent implements OnInit {
 
       ////// DATOS USUARIO Y PLAZA///
       datosPlaza(): Observable<Session> {
-          return this.http.get<Session>(this.basePath + 'home?IdUser=' + this.user.Id);
+          return this.http.get<Session>(this.basePath + 'releases?IdUser=' + this.user.Id);
       }
 
       createLiberar(data): Observable<Liberar> {
