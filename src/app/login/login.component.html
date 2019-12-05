@@ -1,8 +1,3 @@
-<!-- <p>login works!</p>
-<div style="text-align:left" *ngFor="let user of users">
-  <div>{{user.id}}{{user.pruebaCadena}}{{user.pruebaCadenaDos}}</div>
-</div> -->
-
 <div class="login-main">
   <mat-card class="card-login">
     <mat-card-header>
@@ -20,10 +15,10 @@
                 <input matInput placeholder="Nombre de usuario" type="text" pattern="[a-z]{6,20}" formControlName="UserName">
               </mat-form-field>
             </td>
-          </tr> 
+          </tr>
           <tr>
             <td>
-              <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}"> 
+              <mat-form-field style="width: 100%" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}">
                 <input matInput placeholder="Contraseña" [type]="!hide ? 'password' : 'text'" formControlName="UserPassword" minlength="1">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="!hide" type="button">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -34,11 +29,12 @@
         </table>
         <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
       </mat-card-content>
+      <div class="mensaje">{{mensaje}}</div>
       <mat-card-actions style="text-align: center;" class="button-login">
         <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
       </mat-card-actions>
     </form>
-      <button mat-button color="primary" type="button" style="border-radius: 10em;">¿Has olvidado tu contraseña?</button>
+    <button mat-button color="primary" type="button" style="border-radius: 10em;">¿Has olvidado tu contraseña?</button>
   </mat-card>
 </div>
 

@@ -6,6 +6,7 @@ import * as jwt_decode from 'jwt-decode';
 import { Observable } from 'rxjs';
 import { Session } from '../../models/Session';
 import { HttpClient } from '@angular/common/http';
+import { isRegExp } from 'util';
 
 @Component({
   selector: 'app-home',
@@ -34,8 +35,10 @@ export class HomeComponent {
     this.datosPlaza().subscribe(
 
       data => {
+
         this.datosPlazas = data;
         console.log(data);
+
       }
 
     );

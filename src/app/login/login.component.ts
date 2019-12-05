@@ -39,9 +39,11 @@ import * as jwt_decode from 'jwt-decode';
 })
 export class LoginComponent {
   public loginForm: FormGroup;
+  public mensaje;
   // tslint:disable-next-line:no-inferrable-types
   public submitted: boolean = false;
   public error: {code: number, message: string} = null;
+  
   constructor(private formBuilder: FormBuilder,
               private authenticationService: AuthenticationService,
               private storageService: StorageService,
@@ -64,10 +66,19 @@ export class LoginComponent {
 
       this.authenticationService.login(new LoginObjects(this.loginForm.value)).subscribe(
         data => {
+          if (!data.message) {
+
           this.correctLogin(data);
           console.log(data);
+
+        } else {
+          console.log(data.message);
+          this.mensaje = data.message;
+        }
         },
-        error => this.error = JSON.parse(error._body)
+        error => { this.error = JSON.parse(error._body);
+                   console.log(error);
+        }
 
       );
     }

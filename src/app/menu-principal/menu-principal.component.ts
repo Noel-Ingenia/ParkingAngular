@@ -20,7 +20,8 @@ export class MenuPrincipalComponent implements OnInit {
 
   public openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
-      width: '50%',
+      width: '90%',
+      height: '20%',
       data: '¿Quieres cerrar sesion?'
     });
     dialogRef.afterClosed().subscribe( result => {
